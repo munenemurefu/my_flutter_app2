@@ -1,0 +1,12 @@
+workflows:
+  android-workflow:
+    name: Flutter Android build
+    environment:
+      flutter: stable
+      vars:
+        FLUTTER_BUILD_MODE: release
+    scripts:
+      - flutter pub get
+      - flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
